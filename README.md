@@ -2,7 +2,7 @@
 ![Main Figure](src/dynafed.png)
 
 This repository contains the source code for the paper DYNAFED: Tackling Client Data Heterogeneity with Global Dynamics.
- Our paper is available on arXiv: [link](https://arxiv.org/abs/2211.10878).
+ Our paper is accepted by CVPR2023 and is available on arXiv: [link](https://arxiv.org/abs/2211.10878).
 
 ## Table of Contents
 
