@@ -8,7 +8,7 @@ This repository contains the source code for the paper DYNAFED: Tackling Client 
 
 - [Installation](#installation)
 - [Reproducing Results](#reproducing-results)
-- [License](#license)
+- [Citation](#citation)
 
 ## Installation
 To use this project, you will need to install the following packages:
@@ -39,7 +39,7 @@ bash experiments/cinic10/cinic10_0.01_serverdistill.sh
 ![Results 1](src/results.png)
 ![Results 2](src/results_table.png)
 
-## Credits
+### Credits
 
 We would like to give credit to the following repositories for their code and resources that we used in our project:
 
