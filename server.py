@@ -119,11 +119,10 @@ class Server(Device):
         model = self.model_dict[model_name]
         model.train()
         with torch.no_grad():
-          if args.pass_forward:
-            for _ in range(3):
-              for (x_dis, y_dis) in distilled_loader:
-                x_dis , y_dis = x_dis.to(device), y_dis.to(device)
-                model(x_dis)
+          for _ in range(3):
+            for (x_dis, y_dis) in distilled_loader:
+              x_dis , y_dis = x_dis.to(device), y_dis.to(device)
+              model(x_dis)
         optimizer = torch.optim.Adam(model.parameters(), lr=distill_lr)
         loss_avg = 0
         for _ in range(distill_iter):
