@@ -91,17 +91,6 @@ class Server(Device):
     for model_name in unique_client_model_names:
       reduce_weighted(target=self.parameter_dict[model_name], sources=[client.W for client in clients if client.model_name == model_name], weights = self.weights)
 
-
-  def feddf(self, clients, distill_iter, distill_optimizer_fn, num_classes):
-    unique_client_model_names = np.unique(
-        [client.model_name for client in clients])
-    self.weights = torch.Tensor([1. / len(clients)] * len(clients))
-    for model_name in unique_client_model_names:
-      reduce_average(target=self.parameter_dict[model_name], sources=[
-                     client.W for client in clients if client.model_name == model_name])
-    self.distill(clients, distill_optimizer_fn,
-                 distill_iter, "mean_logits", num_classes)
-
   def datadistill(self, clients, distill_iter, distill_lr, dsa, args, current_round=0, start_round=0, ifsoft=True, test_client = False):
     if self.images_train is None or self.labels_train is None or current_round < start_round:
       self.fedavg(clients)
